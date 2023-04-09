@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Monopoly ID",
+  "version": "1.0",
+  "description": "Calls attention to the assets owned by large corporations.",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.washingtonpost.com/*", 
+        "*://www.amazon.com/*",
+        "*://www.wholefoodsmarket.com/*", 
+        "*://www.twitch.tv/*", 
+        "*://www.imdb.com/*", 
+        "*://www.mgmresorts.com/*"
+        ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+ "permissions": ["scripting", "tabs", "activeTab"],
+  "host_permissions": ["<all_urls>"], 
+  "web_accessible_resources": [
+    {
+    "resources": ["bezos.jpg", "amazon.jpg", "amazon_transparent.png"], 
+    "matches": ["<all_urls>"]
+    }
+  ]
+}
